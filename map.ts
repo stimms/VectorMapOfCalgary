@@ -13,7 +13,7 @@ module OpenData
           .attr("width", 900)
           .attr("height", 900);
 
-        d3.json( "data.brighton.json", (json) =>
+        d3.json( "data.json", (json) =>
         {
           vis.append("svg:g")
             .attr("class", "tracts")
