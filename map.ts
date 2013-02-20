@@ -5,7 +5,8 @@ module OpenData
   export class CalgaryMap{
 
     render(){
-        var xy =  d3.geo.albers().scale(280000).translate([33400,-45300]);//.translate([-1000,1800]);//.scale(5000);//.translate([-900,950]);//.scale(28000);
+        var xy =  d3.geo.albers().scale(280000).translate([12460.183572442684,63438]).rotate([110,0]);
+
         var path = d3.geo.path().projection(xy);
 
         var vis = d3.select("#map")

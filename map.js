@@ -3,12 +3,12 @@ var OpenData;
     var CalgaryMap = (function () {
         function CalgaryMap() { }
         CalgaryMap.prototype.render = function () {
-            var xy = d3.geo.albers().rotate([
-                10, 
+            var xy = d3.geo.albers().scale(280000).translate([
+                12460.183572442684, 
+                63438
+            ]).rotate([
+                110, 
                 0
-            ]).scale(280000).translate([
-                33400, 
-                -45300
             ]);
             var path = d3.geo.path().projection(xy);
             var vis = d3.select("#map").append("svg:svg").attr("width", 900).attr("height", 900);
