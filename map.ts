@@ -14,7 +14,7 @@ module OpenData
           .attr("width", 900)
           .attr("height", 900);
 
-        d3.json( "data.json", (json) =>
+        d3.json( "data.geojson", (json) =>
         {
           vis.append("svg:g")
             .attr("class", "tracts")
@@ -24,8 +24,11 @@ module OpenData
             .attr("d", path)
             .attr("fill-opacity", 0.5)
             .attr("data-name", (d)=>{return d.properties.NAME;})
+
             .attr("fill", (d) => {return "black";})
-            .attr("stroke", "#222");
+            .attr("stroke", "#222")
+            .append("svg:title")
+            .text((d)=>{return d.properties.NAME;});
         })
     }
   }

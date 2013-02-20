@@ -3,12 +3,14 @@
 		<script src="jquery.min.js"></script>
 		<script src="d3.min.js"></script>
 		<script src="map.js"></script>
+		<script src="jquery.qtip.min.js"></script>
 		<script>
 			$(function(){
 				var map = new OpenData.CalgaryMap();
 				map.render();
 
 				$("input").keyup(Search);
+
 			});
 
 			function Search()
@@ -17,6 +19,7 @@
 				$("[data-name*='" + $("input").val().toUpperCase()  + "']").attr("fill", "blue");
 			}
 		</script>
+		<link rel="jquery.qtip.min.css"/>
 	</head>
 	<body>
 		<h1>Calgary Map</h1>
