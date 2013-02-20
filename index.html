@@ -8,11 +8,20 @@
 				var map = new OpenData.CalgaryMap();
 				map.render();
 
-			})
+				$("input").keyup(Search);
+			});
+
+			function Search()
+			{
+				$("path").attr("fill", "#222");
+				$("[data-name*='" + $("input").val().toUpperCase()  + "']").attr("fill", "blue");
+			}
 		</script>
 	</head>
 	<body>
 		<h1>Calgary Map</h1>
+		
+		Search:<input type="text"/>
 		<div id="map">
 
 		</div>

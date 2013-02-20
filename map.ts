@@ -5,7 +5,7 @@ module OpenData
   export class CalgaryMap{
 
     render(){
-        var xy =  d3.geo.albers().scale(280000).translate([12460.183572442684,63438]).rotate([110,0]);
+        var xy =  d3.geo.albers().scale(104000).translate([5006.880974004931,24151]).rotate([110,0]);
 
         var path = d3.geo.path().projection(xy);
 
@@ -23,8 +23,9 @@ module OpenData
           .enter().append("svg:path")
             .attr("d", path)
             .attr("fill-opacity", 0.5)
+            .attr("data-name", (d)=>{return d.properties.NAME;})
             .attr("fill", (d) => {return "black";})
-            .attr("stroke", "#222")
+            .attr("stroke", "#222");
         })
     }
   }
